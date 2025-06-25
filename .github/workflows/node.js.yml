@@ -1,0 +1,15 @@
+name: Node.js Version Check
+
+on: [push]
+
+jobs:
+  check-node-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Print Node.js version
+        run: node -v
